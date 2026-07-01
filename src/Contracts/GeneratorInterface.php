@@ -4,7 +4,5 @@ namespace SunatPle\Contracts;
 
 interface GeneratorInterface
 {
-    public function add(array $record): self;
-
-    public function generate(): string;
+    public function generate(array $records): string;
 }
