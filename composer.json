@@ -1,0 +1,14 @@
+{
+    "name": "hectorwatanabe/sunat-ple",
+    "description": "PHP library for generating SUNAT PLE files.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SunatPle\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4"
+    }
+}
