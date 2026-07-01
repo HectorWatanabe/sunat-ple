@@ -91,4 +91,13 @@ class SchemaValidatorTest extends TestCase
             Compras81Schema::FIELDS
         );
     }
+
+    public function testValidacionExitosaNoLanzaExcepcion()
+    {
+        $record = Compras81Fixture::valid();
+
+        SchemaValidator::validate($record, Compras81Schema::FIELDS);
+
+        $this->assertTrue(true);
+    }
 }
