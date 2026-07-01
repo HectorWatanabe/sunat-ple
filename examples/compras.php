@@ -19,26 +19,23 @@ $data = [
         'tipo_documento_proveedor' => '6',
         'numero_documento_proveedor' => '20123456789',
         'razon_social_proveedor' => 'EMPRESA DEMO SAC',
-        'base_imponible' => 100.00,
-        'igv' => 18.00,
+        'base_imponible' => 100,
+        'igv' => 18,
         'exonerado' => 0,
-        'otros_cargos' => 5.00,
-        'importe_total' => 123.00,
+        'otros_cargos' => 5,
+        'importe_total' => 123,
         'divisa' => 'PEN',
         'tipo_cambio' => 1,
-        'fecha_documento_modifica' => null,
-        'tipo_comprobante_modifica' => '',
-        'serie_documento_modifica' => '',
-        'numero_documento_modifica' => '',
-        'fecha_detraccion' => null,
-        'numero_detraccion' => '',
-        'estado_operacion' => '1',
+        'estado_operacion' => '1'
     ]
 ];
 
 $output = $registro->generate($data);
 
-// Guardar archivo PLE
+echo $output . PHP_EOL;
+
+echo "Cantidad de pipes: " . substr_count($output, '|') . PHP_EOL;
+
 file_put_contents(__DIR__ . '/PLE_081.txt', $output);
 
 echo "PLE generado correctamente\n";

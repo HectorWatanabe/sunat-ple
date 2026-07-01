@@ -29,6 +29,8 @@ use SunatPle\Field\FechaDetraccion;
 use SunatPle\Field\NumeroDetraccion;
 use SunatPle\Field\EstadoOperacion;
 use SunatPle\Field\EmptyField;
+use SunatPle\Schema\Compras81Schema;
+use SunatPle\Validator\SchemaValidator;
 
 class RegistroCompras81
 {
@@ -38,49 +40,54 @@ class RegistroCompras81
 
         foreach ($records as $record) {
 
+            SchemaValidator::validate(
+                $record,
+                Compras81Schema::FIELDS
+            );
+
             $writer->add([
-                Periodo::make($record),                     
-                Cuo::make($record),                         
-                Correlativo::make($record),                 
-                FechaEmision::make($record),                
-                FechaVencimiento::make($record),            
-                TipoComprobante::make($record),             
-                Serie::make($record),                       
-                EmptyField::make(),                         
-                NumeroComprobante::make($record),           
-                EmptyField::make(),                         
-                TipoDocumentoProveedor::make($record),      
-                NumeroDocumentoProveedor::make($record),    
-                RazonSocialProveedor::make($record),        
-                BaseImponible::make($record),               
-                Igv::make($record),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                Exonerado::make($record),                   
-                EmptyField::make(),                         
-                OtrosCargos::make($record),                 
-                ImporteTotal::make($record),                
-                Divisa::make($record),                      
-                TipoCambio::make($record),                  
-                FechaDocumentoModifica::make($record),      
-                TipoComprobanteModifica::make($record),     
-                SerieDocumentoModifica::make($record),      
-                EmptyField::make(),                         
-                NumeroDocumentoModifica::make($record),     
-                FechaDetraccion::make($record),            
-                NumeroDetraccion::make($record),            
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EmptyField::make(),                         
-                EstadoOperacion::make($record),             
-                EmptyField::make(),                         
+                Periodo::make($record),
+                Cuo::make($record),
+                Correlativo::make($record),
+                FechaEmision::make($record),
+                FechaVencimiento::make($record),
+                TipoComprobante::make($record),
+                Serie::make($record),
+                EmptyField::make(),
+                NumeroComprobante::make($record),
+                EmptyField::make(),
+                TipoDocumentoProveedor::make($record),
+                NumeroDocumentoProveedor::make($record),
+                RazonSocialProveedor::make($record),
+                BaseImponible::make($record),
+                Igv::make($record),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                Exonerado::make($record),
+                EmptyField::make(),
+                OtrosCargos::make($record),
+                ImporteTotal::make($record),
+                Divisa::make($record),
+                TipoCambio::make($record),
+                FechaDocumentoModifica::make($record),
+                TipoComprobanteModifica::make($record),
+                SerieDocumentoModifica::make($record),
+                EmptyField::make(),
+                NumeroDocumentoModifica::make($record),
+                FechaDetraccion::make($record),
+                NumeroDetraccion::make($record),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EmptyField::make(),
+                EstadoOperacion::make($record),
+                EmptyField::make(),
             ]);
         }
 
